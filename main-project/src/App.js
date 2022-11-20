@@ -45,7 +45,7 @@ function App() {
           <span>Username:</span> {githubData.name}
         </p>
         <p>
-          <span>Location:</span> {githubData.location}
+          <span>Location:</span> {myfunc(githubData.location)}
         </p>
         <p>
           <span>Public Repos:</span> {githubData.public_repos}
@@ -53,6 +53,27 @@ function App() {
       </div>
     </div>
   );
+}
+
+function myfunc( location){
+  if(location) {
+    if(location.indexOf("San Francisco") !== -1){
+      return "San Francisco"
+    }
+    else if(location.indexOf("Dublin") !== -1){
+      return "Dublin"
+    }
+    else if(location.indexOf("Delhi") !== -1){
+      return "Delhi"
+    }
+    else if(location.indexOf("Redmond") !== -1){
+      return "Redmond"
+    }
+    else {
+      return "Null"
+    }
+  }
+
 }
 
 export default App;

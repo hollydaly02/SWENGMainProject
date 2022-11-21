@@ -4,8 +4,10 @@
 }
 .homepage {
   position: relative;
+  /*
   width: 100%;
   height: 100vh;
+  */
 }
 .header {
   position: relative;
@@ -16,7 +18,6 @@
 }
 .searchbar {
   position: relative;
-  top: 200px;
 }
 .searchbar input {
   position: absolute;

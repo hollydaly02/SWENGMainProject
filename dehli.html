@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>Sample</title>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link rel="stylesheet" href="style.css" />
+    <link
+      rel="icon"
+      href="https://cdn.glitch.global/c599d22a-c29e-49a0-8dd5-919bace7a532/%E2%80%94Pngtree%E2%80%94star%20vector%20icon_4015244.png?v=1668616941162"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"
+    />
+  </head>
+  <body>
+    <img
+      src="https://cdn.glitch.global/c599d22a-c29e-49a0-8dd5-919bace7a532/dehli?v=1668617107544"
+      style="width: 100%"
+    />
+    <div class="text-blockA">
+      <div class="header">
+        <div class="dropdown">
+          <button class="dropbtn">
+            Area
+            <i class="fa fa-caret-down"></i>
+          </button>
+          <div class="dropdown-content">
+            <a href="dublin.html">Dublin</a>
+            <a href="redmond.html">Redmond</a>
+            <a href="sanfran.html">San Fransisco</a>
+            <a href="dehli.html">Dehli</a>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="container">
+      <div class="over-img1">
+        <form action="/action_page.php" style="max-width: 500px; margin: auto">
+          <div class="input-container">
+            <i class="fa fa-calendar icon"></i>
+            <input
+              class="input-field"
+              type="date"
+              placeholder="Password"
+              name="pswrd"
+            />
+          </div>
+
+          <button
+            type="submit"
+            class="btn"
+            onclick="check(this.form)"
+            value="Login"
+          >
+            Input
+          </button>
+        </form>
+
+        <script language="javascript">
+          function check(form) {
+            if (form.pswrd.value == "2002-11-26") {
+              window.open("graphs.html");
+            } else {
+              alert("Invalid Date");
+            }
+          }
+        </script>
+      </div>
+    </div>
+  </body>
+</html>

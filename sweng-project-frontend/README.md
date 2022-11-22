@@ -1,7 +1,7 @@
 This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
 
-##About this Next.js Project
-This is the template for software engineering group 15 project. It consists of a home page with a welcome page and a dropdown menu.
+## About this Next.js Project
+This is the template for software engineering group 15 project. It consists of a home page with a welcome message and a dropdown button.
 
 ## Getting Started
 You may first need to install yarn on your machine if you don't have it already. Use homebrew to install yarn if that is the case.

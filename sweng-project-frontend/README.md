@@ -21,6 +21,19 @@ Open [http://localhost:3000](http://localhost:3000) with your browser to see the
 
 The `pages/api` directory is mapped to `/api/*`. Files in this directory are treated as [API routes](https://nextjs.org/docs/api-routes/introduction) instead of React pages.
 
+## Error Fixes
+If you try to run the dashboard and receive this error: 
+warn  - Attempted to load @next/swc-darwin-x64, but it was not installed
+error - Failed to load SWC binary for darwin/x64, see more info here: (https://nextjs.org/docs/messages/failed-loading-swc)
+error Command failed with exit code 1.
+
+You will need to use the command 'yarn install --force' from this page: (https://nextjs.org/docs/messages/failed-loading-swc).
+The application should compile successfully after this, and you will be able to view the dashboard by going to the link given by the compiler:
+$ next dev
+ready - started server on 0.0.0.0:3000, url: http://localhost:3000
+
+Go to this url at localhost:3000 to view the application at port 3000.
+
 ## Learn More
 
 To learn more about Next.js, take a look at the following resources:

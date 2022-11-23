@@ -1,22 +1,38 @@
 This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
 
+## About this Next.js Project
+This is the template for software engineering group 15 project. It consists of a home page with a welcome message and a dropdown button.
+
 ## Getting Started
+You may first need to install yarn on your machine if you don't have it already. Use homebrew to install yarn if that is the case.
+(https://formulae.brew.sh/formula/yarn#default).
+
+This project is run with yarn, not npm.
 
 First, run the development server:
 
 ```bash
-npm run dev
-# or
 yarn dev
 ```
 
 Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
 
-You can start editing the page by modifying `pages/index.tsx`. The page auto-updates as you edit the file.
-
 [API routes](https://nextjs.org/docs/api-routes/introduction) can be accessed on [http://localhost:3000/api/hello](http://localhost:3000/api/hello). This endpoint can be edited in `pages/api/hello.ts`.
 
 The `pages/api` directory is mapped to `/api/*`. Files in this directory are treated as [API routes](https://nextjs.org/docs/api-routes/introduction) instead of React pages.
+
+## Error Fixes
+If you try to run the dashboard and receive this error: 
+warn  - Attempted to load @next/swc-darwin-x64, but it was not installed
+error - Failed to load SWC binary for darwin/x64, see more info here: (https://nextjs.org/docs/messages/failed-loading-swc)
+error Command failed with exit code 1.
+
+You will need to use the command 'yarn install --force' from this page: (https://nextjs.org/docs/messages/failed-loading-swc).
+The application should compile successfully after this, and you will be able to view the dashboard by going to the link given by the compiler:
+$ next dev
+ready - started server on 0.0.0.0:3000, url: http://localhost:3000
+
+Go to this url at localhost:3000 to view the application at port 3000.
 
 ## Learn More
 

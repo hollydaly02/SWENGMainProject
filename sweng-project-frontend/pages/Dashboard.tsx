@@ -7,6 +7,7 @@ import styles from '../styles/Dashboard.module.css'
 export default function Home() {
   return (
     
+    
     <div >
       <Head>
         <title>SWENG 15 Dasboard</title>

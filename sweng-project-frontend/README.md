@@ -8,8 +8,9 @@ You may first need to install yarn on your machine if you don't have it already.
 (https://formulae.brew.sh/formula/yarn#default).
 
 This project is run with yarn, not npm.
+To run the project, you need to be in the project folder, 'sweng-project-frontend'.
 
-First, run the development server:
+Run the development server:
 
 ```bash
 yarn dev

@@ -10,6 +10,35 @@ function App() {
   var count = 0;
   const date = [];
   const time = [];
+  /*Start San Francisco*/
+  var userSanFrancisco1 ="levkk";
+  var repoSanFrancisco1 ="pgcat";
+  var userSanFrancisco2 ="mdo";
+  var repoSanFrancisco2 ="github-buttons";
+  /*End San Francisco*/
+  /*Start Dublin*/
+  var userDublin1 ="orta";
+  var repoDublin1 ="orta.github.com";
+  var userDublin2 ="joreilly";
+  var repoDublin2 ="Confetti";
+
+  /*End Dublin*/
+  /*Start Dehli*/
+  var userDehli1 ="Prince-Mendiratta";
+  var repoDehli1 ="BotsApp";
+  var userDehli2 ="Swati4star";
+  var repoDehli2 ="Images-to-PDF";
+
+  /*End Dehli*/
+  /*Start Redmond*/
+  var userRedmond1 ="zhengthomastang";
+  var repoRedmond1 ="zhengthomastang.github.io";
+  var userRedmond2 ="fjxmlzn";
+  var repoRedmond2 ="opacus";
+
+  /*End Redmond*/
+  const usernames = [];
+  const repositories = [];
   const iterateThroughPages = async () => {
     var pageCount = 1;
     for (let i = 0; true; i++) {

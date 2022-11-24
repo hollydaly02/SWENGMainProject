@@ -71,7 +71,10 @@ function App() {
           }
           count++;
           if (count % 2 === 0) {
-            date.push(theObject[prop].substring(0, 10));
+            var year= theObject[prop].substring(0, 4); //re-arrange the date format to dd-mm-yyyy rather than the github default of yyy-mm-dd
+            var month=theObject[prop].substring(5, 7);
+            var day=theObject[prop].substring(8, 10);
+            date.push(day+"-"+month+"-"+year);
             time.push(theObject[prop].substring(11, 16));
           }
         }

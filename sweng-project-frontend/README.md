@@ -43,10 +43,15 @@ If the program is still running on the port, you will see something like this:
 lsof -i :3000
 COMMAND   PID          USER   FD   TYPE             DEVICE SIZE/OFF NODE NAME
 Google    508 jamesoconnell   42u  IPv6 0x4fa51da45928f843      0t0  TCP localhost:52999->localhost:hbci (CLOSE_WAIT)
+
 Google    508 jamesoconnell   43u  IPv6 0x4fa51da45927e623      0t0  TCP localhost:53000->localhost:hbci (CLOSE_WAIT)
+
 Google    508 jamesoconnell   47u  IPv6 0x4fa51da45927fac3      0t0  TCP localhost:53001->localhost:hbci (CLOSE_WAIT)
+
 Google    508 jamesoconnell   48u  IPv6 0x4fa51da45927d863      0t0  TCP localhost:53002->localhost:hbci (CLOSE_WAIT)
+
 Google    508 jamesoconnell   49u  IPv6 0x4fa51da45927ed03      0t0  TCP localhost:53003->localhost:hbci (CLOSE_WAIT)
+
 To stop the program running, you need to use the 'kill' command, and use it as 'kill -9 PID'. 
 So, in the example above, I would use 'kill -9 508', and the program would stop running.
 To check that the program is not running, or if you are unsure, you can use 'lsof -i :3000', and if you can see 

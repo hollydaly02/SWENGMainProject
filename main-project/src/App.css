@@ -28,12 +28,15 @@
   width: 150px;
   height: 40px;
   border-radius: 10px;
-  top: 60px;
+  top: 110px;
   left: 50%;
   transform: translateX(-50%);
 }
 .searchbar button:hover {
   background-color: transparent;
+}
+.repoSearch {
+  top: 50px;
 }
 .mainBody {
   position: absolute;

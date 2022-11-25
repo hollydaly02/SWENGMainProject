@@ -227,6 +227,8 @@ function App() {
         }
       }
     }
+    
+  }
   };
   /*START
    *THE FOLLOWING GET THE TOTAL COMMITS FOR THAT PAGE AND ALSO ALL THE DATES THE COMMITS WERE MADE*/

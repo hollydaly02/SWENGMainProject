@@ -7,42 +7,224 @@ function App() {
 
   const [githubRepo, setGithubRepo] = useState([]);
 
-  var count = 0;
-  const date = [];
-  const time = [];
-  const iterateThroughPages = async () => {
-    var pageCount = 1;
-    for (let i = 0; true; i++) {
-      const response = await fetch(
-        `https://api.github.com/repos/${githubUser}/${githubRepo}/commits?per_page=100&page=${pageCount}`
-      );
-      const responseLocation = await fetch(
-        `https://api.github.com/users/${githubUser}`
-      );
+  const [requestDate, setRequestDate] = useState([]);
 
-      const jsonUserInfo = await responseLocation.json();
-      setGithubData(jsonUserInfo);
-      const jsonResponsePage = await response.json();
-      if (Object.keys(jsonResponsePage).length === 0) {
-        console.log("NEW This is empty!");
-        console.log("Number of commits on this master branch: \n" + count / 2);
-        console.log(
-          "All the commit dates: \n" +
-            date +
-            "\n\nDate array length: \n" +
-            date.length
+  var count = 0;
+  const SanFrancisco1Date = [];
+  const SanFrancisco1Time = [];
+  const SanFrancisco2Date = [];
+  const SanFrancisco2Time = [];
+
+  const Dublin1Date = [];
+  const Dublin1Time = [];
+  const Dublin2Date = [];
+  const Dublin2Time = [];
+
+  const Delhi1Date = [];
+  const Delhi1Time = [];
+  const Delhi2Date = [];
+  const Delhi2Time = [];
+
+  const Redmond1Date = [];
+  const Redmond1Time = [];
+  const Redmond2Date = [];
+  const Redmond2Time = [];
+
+  /*Start San Francisco*/
+  var userSanFrancisco1 = "levkk";
+  var repoSanFrancisco1 = "pgcat";
+  var userSanFrancisco2 = "mdo";
+  var repoSanFrancisco2 = "github-buttons";
+  /*End San Francisco*/
+
+  /*Start Dublin*/
+  var userDublin1 = "orta";
+  var repoDublin1 = "orta.github.com";
+  var userDublin2 = "joreilly";
+  var repoDublin2 = "Confetti";
+  /*End Dublin*/
+
+  /*Start Dehli*/
+  var userDehli1 = "Prince-Mendiratta";
+  var repoDehli1 = "BotsApp";
+  var userDehli2 = "Swati4star";
+  var repoDehli2 = "Images-to-PDF";
+  /*End Dehli*/
+
+  /*Start Redmond*/
+  var userRedmond1 = "zhengthomastang";
+  var repoRedmond1 = "zhengthomastang.github.io";
+  var userRedmond2 = "fjxmlzn";
+  var repoRedmond2 = "opacus";
+  /*End Redmond*/
+
+  const usernames = [
+    userSanFrancisco1,
+    userSanFrancisco2,
+    userDublin1,
+    userDublin2,
+    userDehli1,
+    userDehli2,
+    userRedmond1,
+    userRedmond2,
+  ];
+  const repositories = [
+    repoSanFrancisco1,
+    repoSanFrancisco2,
+    repoDublin1,
+    repoDublin2,
+    repoDehli1,
+    repoDehli2,
+    repoRedmond1,
+    repoRedmond2,
+  ];
+
+  const iterateThroughPages = async () => {
+    for (var j = 0; j < usernames.length; j++) {
+      count = 0;
+      var pageCount = 1;
+      for (let i = 0; true; i++) {
+        const response = await fetch(
+          `https://api.github.com/repos/${usernames[j]}/${repositories[j]}/commits?per_page=100&page=${pageCount}`,
+          {
+            method: "GET",
+            headers: {
+              Authorization: `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`,
+            },
+          }
         );
-        console.log(
-          "All the commit times: \n" +
-            time +
-            "\n\nTime array length: \n" +
-            time.length
+        const responseLocation = await fetch(
+          `https://api.github.com/users/${usernames[j]}`,
+          {
+            method: "GET",
+            headers: {
+              Authorization: `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`,
+            },
+          }
         );
-        return console.log("NEW: I HAVE ENDED THIS");
-      } else {
-        console.log("NEW Page count is : \n" + pageCount);
-        getObject(jsonResponsePage);
-        pageCount++;
+        //const response = require("./testing.json");
+        //const responseLocation = "Dublin";
+        const jsonUserInfo = await responseLocation.json();
+        setGithubData(jsonUserInfo);
+        const jsonResponsePage = await response.json();
+        if (Object.keys(jsonResponsePage).length === 0) {
+          console.log("NEW This is empty!");
+          console.log(
+            "Number of commits on this master branch: \n" + count / 2
+          );
+          if (j === 0) {
+            console.log(
+              "All the commit dates: \n" +
+                SanFrancisco1Date +
+                "\n\nDate array length: \n" +
+                SanFrancisco1Date.length
+            );
+            console.log(
+              "All the commit times: \n" +
+                SanFrancisco1Time +
+                "\n\nTime array length: \n" +
+                SanFrancisco1Time.length
+            );
+          } else if (j === 1) {
+            console.log(
+              "All the commit dates: \n" +
+                SanFrancisco2Date +
+                "\n\nDate array length: \n" +
+                SanFrancisco2Date.length
+            );
+            console.log(
+              "All the commit times: \n" +
+                SanFrancisco2Time +
+                "\n\nTime array length: \n" +
+                SanFrancisco2Time.length
+            );
+          } else if (j === 2) {
+            console.log(
+              "All the commit dates: \n" +
+                Dublin1Date +
+                "\n\nDate array length: \n" +
+                Dublin1Date.length
+            );
+            console.log(
+              "All the commit times: \n" +
+                Dublin1Time +
+                "\n\nTime array length: \n" +
+                Dublin1Time.length
+            );
+          } else if (j === 3) {
+            console.log(
+              "All the commit dates: \n" +
+                Dublin2Date +
+                "\n\nDate array length: \n" +
+                Dublin2Date.length
+            );
+            console.log(
+              "All the commit times: \n" +
+                Dublin2Time +
+                "\n\nTime array length: \n" +
+                Dublin2Time.length
+            );
+          } else if (j === 4) {
+            console.log(
+              "All the commit dates: \n" +
+                Delhi1Date +
+                "\n\nDate array length: \n" +
+                Delhi1Date.length
+            );
+            console.log(
+              "All the commit times: \n" +
+                Delhi1Time +
+                "\n\nTime array length: \n" +
+                Delhi1Time.length
+            );
+          } else if (j === 5) {
+            console.log(
+              "All the commit dates: \n" +
+                Delhi2Date +
+                "\n\nDate array length: \n" +
+                Delhi2Date.length
+            );
+            console.log(
+              "All the commit times: \n" +
+                Delhi2Time +
+                "\n\nTime array length: \n" +
+                Delhi2Time.length
+            );
+          } else if (j === 6) {
+            console.log(
+              "All the commit dates: \n" +
+                Redmond1Date +
+                "\n\nDate array length: \n" +
+                Redmond1Date.length
+            );
+            console.log(
+              "All the commit times: \n" +
+                Redmond1Time +
+                "\n\nTime array length: \n" +
+                Redmond1Time.length
+            );
+          } else if (j === 7) {
+            console.log(
+              "All the commit dates: \n" +
+                Redmond2Date +
+                "\n\nDate array length: \n" +
+                Redmond2Date.length
+            );
+            console.log(
+              "All the commit times: \n" +
+                Redmond2Time +
+                "\n\nTime array length: \n" +
+                Redmond2Time.length
+            );
+          }
+          console.log("NEW: I HAVE ENDED THIS");
+          break;
+        } else {
+          console.log("NEW Page count is : \n" + pageCount);
+          const index = j;
+          getObject(jsonResponsePage, index);
+          pageCount++;
+        }
       }
     }
   };
@@ -54,11 +236,11 @@ function App() {
   //   console.log("This is empty!");
   // }
   var testing = 0;
-  function getObject(theObject) {
+  function getObject(theObject, index) {
     var result = null;
     if (theObject instanceof Array) {
       for (var i = 0; i < theObject.length; i++) {
-        result = getObject(theObject[i]);
+        result = getObject(theObject[i], index);
         if (result) {
           break;
         }
@@ -71,15 +253,41 @@ function App() {
           }
           count++;
           if (count % 2 === 0) {
-            date.push(theObject[prop].substring(0, 10));
-            time.push(theObject[prop].substring(11, 16));
+            var year = theObject[prop].substring(0, 4); //re-arrange the date format to dd-mm-yyyy rather than the github default of yyy-mm-dd
+            var month = theObject[prop].substring(5, 7);
+            var day = theObject[prop].substring(8, 10);
+            if (index === 0) {
+              SanFrancisco1Date.push(day + "-" + month + "-" + year);
+              SanFrancisco1Time.push(theObject[prop].substring(11, 16));
+            } else if (index === 1) {
+              SanFrancisco2Date.push(day + "-" + month + "-" + year);
+              SanFrancisco2Time.push(theObject[prop].substring(11, 16));
+            } else if (index === 2) {
+              Dublin1Date.push(day + "-" + month + "-" + year);
+              Dublin1Time.push(theObject[prop].substring(11, 16));
+            } else if (index === 3) {
+              Dublin2Date.push(day + "-" + month + "-" + year);
+              Dublin2Time.push(theObject[prop].substring(11, 16));
+            } else if (index === 4) {
+              Delhi1Date.push(day + "-" + month + "-" + year);
+              Delhi1Time.push(theObject[prop].substring(11, 16));
+            } else if (index === 5) {
+              Delhi2Date.push(day + "-" + month + "-" + year);
+              Delhi2Time.push(theObject[prop].substring(11, 16));
+            } else if (index === 6) {
+              Redmond1Date.push(day + "-" + month + "-" + year);
+              Redmond1Time.push(theObject[prop].substring(11, 16));
+            } else if (index === 7) {
+              Redmond2Date.push(day + "-" + month + "-" + year);
+              Redmond2Time.push(theObject[prop].substring(11, 16));
+            }
           }
         }
         if (
           theObject[prop] instanceof Object ||
           theObject[prop] instanceof Array
         ) {
-          result = getObject(theObject[prop]);
+          result = getObject(theObject[prop], index);
           if (result) {
             break;
           }
@@ -88,29 +296,27 @@ function App() {
     }
     return result;
   }
+  var commitsOnDates = 0;
+  function commitsOnDate() {
+    for (let i = 0; i < SanFrancisco1Date.length; i++) {
+      if (requestDate === SanFrancisco1Date[i]) {
+        console.log("I'm being run");
+        commitsOnDates++;
+      }
+    }
+    return commitsOnDates;
+  }
 
   /*END*/
 
   return (
     <div className="homepage">
       <div className="header">
-        <h1>Testing Users API</h1>
+        <h1>Github API Testings</h1>
       </div>
       <div className="searchbar">
-        <input
-          type="text"
-          placeholder="Username"
-          onChange={(e) => setGithubUser(e.target.value)}
-          className="inputSearch"
-        />
-        <input
-          type="text"
-          placeholder="Repository"
-          onChange={(e) => setGithubRepo(e.target.value)}
-          className="repoSearch"
-        />
         <button onClick={iterateThroughPages} className="search_button">
-          Search Github
+          Fetch Data
         </button>
       </div>
       <br></br>
@@ -122,9 +328,6 @@ function App() {
         </p>
         <p>
           <span>Location:</span> {myfunc(githubData.location)}
-        </p>
-        <p>
-          <span>Public Repos:</span> {githubData.public_repos}
         </p>
       </div>
     </div>

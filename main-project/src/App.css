@@ -40,10 +40,15 @@
 }
 .mainBody {
   position: absolute;
-  top: 80%;
+  top: 50%;
   left: 50%;
-  transform: translate(-50%, -80%);
+  transform: translate(-50%, -50%);
   text-align: center;
+}
+.mainBody img {
+  border-radius: 8px;
+  border: 2px solid black;
+  margin-bottom: 20px;
 }
 .mainBody p span {
   font-weight: bold;

@@ -2,7 +2,7 @@ const WeatherApi = {
     fetchWeather: (ev) => {
         let location = document.getElementById('location').value;
         let key = 'T3LMXH7MYPS35QRD3B62FD8A3';
-        let sDate = document.getElementById('sDate').value
+        let sDate = document.getElementById('sDate').value //formatted as YYYY-MM-DD e.g. "2020-11-01" = 1st Nov 2020
         let fDate = document.getElementById('fDate').value
         //let lang = 'en';
         //let units = 'metric';

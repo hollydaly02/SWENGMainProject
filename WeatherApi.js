@@ -1,10 +1,12 @@
 const WeatherApi = {
     fetchWeather: (ev) => {
         let location = document.getElementById('location').value;
-        let key = '2d807f8e0410259076e22bc75ee21372';
-        let lang = 'en';
-        let units = 'metric';
-        let url = `https://api.openweathermap.org/data/2.5/weather?q=${location}&appid=${key}&units=${units}&lang=${lang}`;
+        let key = 'T3LMXH7MYPS35QRD3B62FD8A3';
+        let sDate = document.getElementById('sDate').value
+        let fDate = document.getElementById('fDate').value
+        //let lang = 'en';
+        //let units = 'metric';
+        let url = `https://weather.visualcrossing.com/VisualCrossingWebServices/rest/services/timeline/${location}/${sDate}/${fDate}?key=${key}`;
         
         fetch(url)
             .then((resp) => {

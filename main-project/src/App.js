@@ -1,7 +1,6 @@
 import "./App.css";
-import { useEffect, useState } from "react";
+import { useState } from "react";
 
-const finalMatchingDates = [];
 function App() {
   const [githubData, setGithubData] = useState([]);
 
@@ -96,47 +95,12 @@ function App() {
   let tempArrayDates = [];
   let tempArrayTimes = [];
   let tempDateSelection = [];
-  let SanFrancisco1Date = [];
-  let SanFrancisco1Time = [];
-  let SanFrancisco2Date = [];
-  let SanFrancisco2Time = [];
-  let Dublin1Date = [];
-  let Dublin1Time = [];
-  let Dublin2Date = [];
-  let Dublin2Time = [];
-
-  let Delhi1Date = [];
-  let Delhi1Time = [];
-  let Delhi2Date = [];
-  let Delhi2Time = [];
-
-  let Redmond1Date = [];
-  let Redmond1Time = [];
-  let Redmond2Date = [];
-  let Redmond2Time = [];
   const iterateThroughPages = async () => {
-    SanFrancisco1Date = [];
-    SanFrancisco1Time = [];
-    SanFrancisco2Date = [];
-    SanFrancisco2Time = [];
-    Dublin1Date = [];
-    Dublin1Time = [];
-    Dublin2Date = [];
-    Dublin2Time = [];
-    Delhi1Date = [];
-    Delhi1Time = [];
-    Delhi2Date = [];
-    Delhi2Time = [];
-    Redmond1Date = [];
-    Redmond1Time = [];
-    Redmond2Date = [];
-    Redmond2Time = [];
     let tempArrayDates2 = [];
     let tempArrayTimes2 = [];
     for (var j = 0; j < usernames.length; j++) {
       count = 0;
       var pageCount = 1;
-      var cond = 0;
       tempArrayDates = [];
       tempArrayTimes = [];
       tempDateSelection = [];
@@ -234,14 +198,12 @@ function App() {
           const index = j;
           getObject(jsonResponsePage, index);
           pageCount++;
-          cond++;
         }
       }
     }
   };
   /*START
    *THE FOLLOWING GET THE TOTAL COMMITS FOR THAT PAGE AND ALSO ALL THE DATES THE COMMITS WERE MADE*/
-  var testing = 0;
   function getObject(theObject, index) {
     var result = null;
     if (theObject instanceof Array) {

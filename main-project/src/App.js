@@ -11,7 +11,7 @@ function App() {
 
   const createBarChart = async () => {
     // setting up svg container
-    const w = 400;
+    const w = 600;
     const h = 300;
 
     // Remove the old svg
@@ -24,8 +24,8 @@ function App() {
       .attr('height', h)
       .style('background', '#d3d3d3')
       .style('overflow', 'visible')
-      .style('margin-top', '75px')
-      .style('margin-left', '50px');
+      .style('margin-top', '80px')
+      .style('margin-left', '80px');
     
     // setting the scaling
     const xScale = d3.scaleBand()
@@ -70,8 +70,8 @@ function App() {
     console.log(data)
 
     // set the dimensions and margins of the graph
-    var margin = { top: 50, right: 20, bottom: 50, left: 70 },
-    width = 400 - margin.left - margin.right,
+    var margin = { top: 80, right: 20, bottom: 20, left: 100 },
+    width = 700 - margin.left - margin.right,
     height = 400 - margin.top - margin.bottom;
 
     // Remove the old svg
@@ -112,14 +112,22 @@ function App() {
       .attr("stroke", "steelblue")
       .attr("stroke-width", 1.5)
       .attr("d", valueLine);
+
+    svg.append("path")
+      .data([data])
+      .attr("class", "line")
+      .attr("fill", "none")
+      .attr("stroke", "red")
+      .attr("stroke-width", 3)
+      .attr("d", valueLine);
   }
 
   const createPieChart = async () => {
     const data = [{ label: 'Rainy', value: 10 }, { label: 'Sunny', value: 20 }, { label: 'Cloudy', value: 30 }];
-    const outerRadius = 100;
+    const outerRadius = 200;
     const innerRadius = 0;
     const margin = {
-      top: 50, right: 50, bottom: 50, left: 50,
+      top: 50, right: 50, bottom: 50, left: 300,
     };
 
     const width = 2 * outerRadius + margin.left + margin.right;
@@ -200,7 +208,7 @@ function App() {
   };
 
   return (
-    <div>
+    <div class="parent">
       <div id="barchart-container" />
       <div id="linechart-container" />
       <div id="pie-container" />

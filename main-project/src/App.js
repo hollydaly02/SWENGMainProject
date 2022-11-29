@@ -350,21 +350,53 @@ function App() {
   }
   function listMatchingDates() {
     if (buttonData === 0) {
-      console.log(sanFran1Matches);
+      if (sanFran1Matches.length === 0) {
+        console.log("Sorry, there were no matches for this date range");
+      } else {
+        console.log(sanFran1Matches);
+      }
     } else if (buttonData === 1) {
-      console.log(sanFran2Matches);
+      if (sanFran2Matches.length === 0) {
+        console.log("Sorry, there were no matches for this date range");
+      } else {
+        console.log(sanFran2Matches);
+      }
     } else if (buttonData === 2) {
-      console.log(dublin1Matches);
+      if (dublin1Matches.length === 0) {
+        console.log("Sorry, there were no matches for this date range");
+      } else {
+        console.log(dublin1Matches);
+      }
     } else if (buttonData === 3) {
-      console.log(dublin2Matches);
+      if (dublin2Matches.length === 0) {
+        console.log("Sorry, there were no matches for this date range");
+      } else {
+        console.log(dublin2Matches);
+      }
     } else if (buttonData === 4) {
-      console.log(delhi1Matches);
+      if (delhi1Matches.length === 0) {
+        console.log("Sorry, there were no matches for this date range");
+      } else {
+        console.log(delhi1Matches);
+      }
     } else if (buttonData === 5) {
-      console.log(delhi2Matches);
+      if (delhi2Matches.length === 0) {
+        console.log("Sorry, there were no matches for this date range");
+      } else {
+        console.log(delhi2Matches);
+      }
     } else if (buttonData === 6) {
-      console.log(redmond1Matches);
+      if (redmond1Matches.length === 0) {
+        console.log("Sorry, there were no matches for this date range");
+      } else {
+        console.log(redmond1Matches);
+      }
     } else if (buttonData === 7) {
-      console.log(redmond2Matches);
+      if (redmond2Matches.length === 0) {
+        console.log("Sorry, there were no matches for this date range");
+      } else {
+        console.log(redmond2Matches);
+      }
     }
     return;
   }

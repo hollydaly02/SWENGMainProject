@@ -294,38 +294,11 @@ function App() {
         tempDate.setDate(tempDate.getDate() + 1);
       }
       setDateSelection(datesArr);
-      //console.log(datesArr);
-      // let tempy1 = SanFrancisco1DateC;
-      // let tempy2 = SanFrancisco1TimeC;
-      // console.log("this is tempy");
-      // console.log(tempy2);
-      // setSanFran1Matches(findMatches(tempy1, tempy2, datesArr));
-      // console.log(sanFran1Matches);
-      // setSanFran2Matches(
-      //   findMatches(SanFrancisco2DateC, SanFrancisco2TimeC, datesArr)
-      // );
-      // //console.log(sanFran2Matches);
-      // setDublin1Matches(findMatches(Dublin1DateC, Dublin1TimeC, datesArr));
-      // //console.log(dublin1Matches);
-      // setDublin2Matches(findMatches(Dublin2DateC, Dublin2TimeC, datesArr));
-      // //console.log(dublin2Matches);
-      // setDelhi1Matches(findMatches(Delhi1DateC, Delhi1TimeC, datesArr));
-      // //console.log(delhi1Matches);
-      // setDelhi2Matches(findMatches(Delhi2DateC, Delhi2TimeC, datesArr));
-      // //console.log(delhi1Matches);
-      // setRedmond1Matches(findMatches(Redmond1DateC, Redmond1TimeC, datesArr));
-      // //console.log(redmond1Matches);
-      // setRedmond2Matches(findMatches(Redmond2DateC, Redmond2TimeC, datesArr));
-      // //console.log(redmond1Matches);
       return;
     }
   }
   function findMatches(locationDateArray, locationTimeArray, datesArr) {
     matchDates = [];
-    //console.log(locationDateArray);
-    //console.log(locationTimeArray);
-    //console.log(datesArr);
-
     var totalMatchingDateCounter = 0;
     for (var i = 0; i < datesArr.length; i++) {
       var matchingDateCounter = 0;

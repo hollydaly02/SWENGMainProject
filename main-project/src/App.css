@@ -5,7 +5,7 @@
 .homepage {
   position: relative;
   width: 100%;
-  height: 100vh;
+  height: auto;
 }
 .header {
   position: relative;
@@ -16,7 +16,7 @@
 }
 .searchbar {
   position: relative;
-  top: 200px;
+  top: 100px;
 }
 .searchbar input {
   position: absolute;
@@ -28,21 +28,16 @@
   width: 150px;
   height: 40px;
   border-radius: 10px;
-  top: 110px;
+  top: 180px;
   left: 50%;
   transform: translateX(-50%);
 }
 .searchbar button:hover {
   background-color: transparent;
 }
-.repoSearch {
-  top: 50px;
-}
 .mainBody {
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
+  top: 350px;
+  position: relative;
   text-align: center;
 }
 .mainBody img {
@@ -52,4 +47,54 @@
 }
 .mainBody p span {
   font-weight: bold;
+}
+.endDate {
+  top: 100px;
+}
+.buttonSelectors {
+  position: relative;
+  width: 100%;
+  top: 400px;
+  display: grid;
+  grid-template-columns: repeat(8, 1fr);
+  grid-template-rows: 1fr;
+  grid-column-gap: 10px;
+  grid-row-gap: 50px;
+  font-size: small;
+}
+.sanFran1,
+.sanFran2,
+.dublin1,
+.dublin2,
+.delhi1,
+.delhi2,
+.redmond1,
+.redmond2 {
+  position: relative;
+}
+.sanFran1 button,
+.sanFran2 button,
+.dublin1 button,
+.dublin2 button,
+.delhi1 button,
+.delhi2 button,
+.redmond1 button,
+.redmond2 button {
+  position: absolute;
+  left: 50%;
+  transform: translate(-50%);
+  width: 100px;
+  height: 25px;
+  cursor: pointer;
+  border-radius: 8px;
+}
+.sanFran1 button:hover,
+.sanFran2 button:hover,
+.dublin1 button:hover,
+.dublin2 button:hover,
+.delhi1 button:hover,
+.delhi2 button:hover,
+.redmond1 button:hover,
+.redmond2 button:hover {
+  background-color: transparent;
 }

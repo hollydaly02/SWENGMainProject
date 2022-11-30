@@ -20,11 +20,22 @@ export default function Home() {
     <div className={styles.dropbtn }>
       <Dropdown>
       <Dropdown.Toggle variant="success" id="dropdown-basic">
-        Navigate to Dashboard
+        Navigate 
       </Dropdown.Toggle>
 
-      <Dropdown.Menu>
-        <Dropdown.Item href="Dashboard">Dashboard</Dropdown.Item>
+      <Dropdown.Menu className={styles.testing}>
+        <div className="testing1">        
+          <Dropdown.Item href="Dublin">Dublin</Dropdown.Item>
+        </div>
+        <div className="testing2">        
+          <Dropdown.Item href="SanFrancisco">San Francisco</Dropdown.Item>
+        </div>
+        <div className="testing3">        
+          <Dropdown.Item href="Delhi">Delhi</Dropdown.Item>
+        </div>
+        <div className="testing3">        
+          <Dropdown.Item href="Redmond">Redmond</Dropdown.Item>
+        </div>
       </Dropdown.Menu>
     </Dropdown>
     </div>
@@ -34,10 +45,8 @@ export default function Home() {
         <h1 className={styles.title}>
           Welcome to SWENG Group 15 Dashboard
          </h1>
-         <h1 className={styles.title}>
-          Go to <Link href="Dashboard">Dashboard</Link>
-
-        </h1>
+         
+        
 
         
 

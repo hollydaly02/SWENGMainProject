@@ -1,5 +1,5 @@
 import "./App.css";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 
 function App() {
   const [githubData, setGithubData] = useState([]);
@@ -41,7 +41,7 @@ function App() {
   const [redmond2Matches, setRedmond2Matches] = useState([]);
   /*END SAVED MATCHES ARRAYS*/
   var count = 0;
-
+  let sanFran1FinalMatches = [];
   let matchDates = [];
   /*Start San Francisco*/
   var userSanFrancisco1 = "levkk";
@@ -95,6 +95,7 @@ function App() {
   let tempArrayDates = [];
   let tempArrayTimes = [];
   let tempDateSelection = [];
+
   const iterateThroughPages = async () => {
     let tempArrayDates2 = [];
     let tempArrayTimes2 = [];
@@ -148,14 +149,14 @@ function App() {
               tempArrayTimes2.length
           );
           console.log("Ending this iteration.");
-          dateRangeFinder();
+          let finalDateRange = dateRangeFinder();
           for (var l = 0; l < dateSelection.length; l++) {
             tempDateSelection[l] = dateSelection[l];
           }
           let finalMatches = findMatches(
             tempArrayDates2,
             tempArrayTimes2,
-            tempDateSelection
+            finalDateRange
           );
           if (j === 0) {
             setSanFrancisco1Date(tempArrayDates2);
@@ -201,6 +202,7 @@ function App() {
         }
       }
     }
+    console.log("That was the last iteration of the last repo. All done!");
   };
   /*START
    *THE FOLLOWING GET THE TOTAL COMMITS FOR THAT PAGE AND ALSO ALL THE DATES THE COMMITS WERE MADE*/
@@ -294,11 +296,14 @@ function App() {
         tempDate.setDate(tempDate.getDate() + 1);
       }
       setDateSelection(datesArr);
-      return;
+      return datesArr;
     }
   }
   function findMatches(locationDateArray, locationTimeArray, datesArr) {
     matchDates = [];
+    //console.log(locationDateArray);
+    //console.log(locationTimeArray);
+    //console.log(datesArr);
     var totalMatchingDateCounter = 0;
     for (var i = 0; i < datesArr.length; i++) {
       var matchingDateCounter = 0;
@@ -326,53 +331,62 @@ function App() {
       if (sanFran1Matches.length === 0) {
         console.log("Sorry, there were no matches for this date range");
       } else {
+        console.log("San Francisco repo 1: ");
         console.log(sanFran1Matches);
       }
     } else if (buttonData === 1) {
       if (sanFran2Matches.length === 0) {
         console.log("Sorry, there were no matches for this date range");
       } else {
+        console.log("San Francisco repo 2: ");
         console.log(sanFran2Matches);
       }
     } else if (buttonData === 2) {
       if (dublin1Matches.length === 0) {
         console.log("Sorry, there were no matches for this date range");
       } else {
+        console.log("Dublin repo 1: ");
         console.log(dublin1Matches);
       }
     } else if (buttonData === 3) {
       if (dublin2Matches.length === 0) {
         console.log("Sorry, there were no matches for this date range");
       } else {
+        console.log("Dublin repo 2: ");
         console.log(dublin2Matches);
       }
     } else if (buttonData === 4) {
       if (delhi1Matches.length === 0) {
         console.log("Sorry, there were no matches for this date range");
       } else {
+        console.log("Delhi repo 1: ");
         console.log(delhi1Matches);
       }
     } else if (buttonData === 5) {
       if (delhi2Matches.length === 0) {
         console.log("Sorry, there were no matches for this date range");
       } else {
+        console.log("Delhi repo 2: ");
         console.log(delhi2Matches);
       }
     } else if (buttonData === 6) {
       if (redmond1Matches.length === 0) {
         console.log("Sorry, there were no matches for this date range");
       } else {
+        console.log("Redmond repo 1: ");
         console.log(redmond1Matches);
       }
     } else if (buttonData === 7) {
       if (redmond2Matches.length === 0) {
         console.log("Sorry, there were no matches for this date range");
       } else {
+        console.log("Redmond repo 2: ");
         console.log(redmond2Matches);
       }
     }
     return;
   }
+  //useEffect(/*() => */);
   return (
     <div className="homepage">
       <div className="header">

@@ -1,7 +1,13 @@
 import { useRouter } from "next/router";
 import { GetStaticPaths, GetStaticProps } from "next/types";
 import styles from "../styles/Dashboard.module.css";
+
+import BarChart from '../components/BarChart'
+import { render } from "react-dom";
+import * as React from "react";
+
 export default function LocationView({ location }: { location: string }) {
+
   return (
     <main className={styles.main}>
       <div className={styles.container}>

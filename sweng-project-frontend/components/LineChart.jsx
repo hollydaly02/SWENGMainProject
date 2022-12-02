@@ -1,5 +1,5 @@
 import React from "react";
-import d3 from "d3";
+import d3 from 'd3';
 
 function drawChart(svgRef) {
   // set the dimensions and margins of the graph
@@ -64,7 +64,7 @@ function drawChart(svgRef) {
 }
 
 const Chart = () => {
-    const svg = React.useRef<SVGSVGElement>(null);
+    const svg = React.useRef(null);
     React.useEffect(() => {
       drawChart(svg);
     }, [svg]);

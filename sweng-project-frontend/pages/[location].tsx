@@ -15,6 +15,8 @@ const Item = styled(Paper)(({ theme }) => ({
 }));
 
 import BarChart from "../components/BarChart";
+import LineChart from "../components/LineChart";
+import PieChart from "../components/PieChart";
 import Typography from "@mui/material/Typography";
 
 export default function LocationView({ location }: { location: string }) {
@@ -67,10 +69,14 @@ export default function LocationView({ location }: { location: string }) {
           </Item>
         </Grid>
         <Grid item xs={6}>
-          <Item>3</Item>
+          <Item>
+            <LineChart />
+          </Item>
         </Grid>
         <Grid item xs={6}>
-          <Item>4</Item>
+          <Item>
+            <PieChart />
+          </Item>
         </Grid>
       </Grid>
     </Box>

@@ -12,8 +12,8 @@ function drawChart(svgRef: React.RefObject<SVGSVGElement>) {
     .attr("height", h)
     .style("background", "#d3d3d3")
     .style("overflow", "visible")
-    .style("margin-top", "80px")
-    .style("margin-left", "80px");
+    .style("margin-top", "40px")
+    .style("margin-bottom", "40px");
 
   // setting the scaling
   const xScale = d3
@@ -30,11 +30,14 @@ function drawChart(svgRef: React.RefObject<SVGSVGElement>) {
     .ticks(data.length) // number of labels on bottom
     .tickFormat((i) => i + 1);
   const yAxis = d3.axisLeft(yScale).ticks(5);
+
   svg
     .append("g")
     .call(xAxis)
     .attr("transform", "translate(0," + h + ")"); // shift x-axis to bottom of bar chart
-  svg.append("g").call(yAxis);
+  svg
+    .append("g")
+    .call(yAxis);
 
   // setting the svg data (actually draw the data)
   svg

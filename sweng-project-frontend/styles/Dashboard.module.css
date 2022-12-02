@@ -1,0 +1,57 @@
+
+
+/* Add a gray background color with some padding */
+.main {
+  padding: 25px;
+  padding-top: 20px;
+  background-size: fill;
+}
+
+.h1 {
+  font-family: Courgette;
+  font-size: 50px;
+  text-align: center
+}
+
+.inputcontainer {
+  width: 50%;
+  margin: 0px;
+  margin: 10px;
+  display: flex;
+
+}
+
+.icon {
+  padding: 10px;
+  background: pink;
+  color: white;
+  min-width: 50px;
+  text-align: center;
+}
+
+.inputfield {
+  width: 100%;
+  padding: 10px;
+  outline: 2px;
+}
+
+.inputfield:focus {
+  border: 2px solid pink;
+}
+
+/* Set a style for the submit button */
+.btn {
+  background-color: #f48fb1;
+  color: black;
+  padding: 15px 20px;
+  border: none;
+  cursor: pointer;
+  width: 200px;
+  opacity: 0.9;
+  margin-left: 10px;
+  vertical-align:middle;
+}
+
+.btn:hover {
+  opacity: 1;
+}

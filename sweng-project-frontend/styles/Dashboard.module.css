@@ -3,6 +3,7 @@
 /* Add a gray background color with some padding */
 .main {
   padding: 25px;
+  padding-top: 20px;
   background-size: fill;
 }
 

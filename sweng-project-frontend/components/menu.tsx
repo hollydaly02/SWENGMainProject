@@ -20,7 +20,7 @@ export default function ButtonAppBar() {
               <Link key={page} href={page.replace(" ", "")} passHref>
                 <Button
                   key={page}
-                  sx={{ my: 1, color: "white", display: "block" }}
+                  sx={{ my: 2, color: "white", display: "block" }}
                 >
                   {page}
                 </Button>

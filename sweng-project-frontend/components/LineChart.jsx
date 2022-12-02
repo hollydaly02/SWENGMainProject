@@ -1,7 +1,7 @@
-import * as React from "react";
-import * as d3 from "d3";
+import React from "react";
+import d3 from "d3";
 
-function drawChart(svgRef: React.RefObject<SVGSVGElement>) {
+function drawChart(svgRef) {
   // set the dimensions and margins of the graph
   var margin = { top: 10, right: 30, bottom: 30, left: 60 },
     width = 460 - margin.left - margin.right,
@@ -17,10 +17,11 @@ function drawChart(svgRef: React.RefObject<SVGSVGElement>) {
       "translate(" + margin.left + "," + margin.top + ")");
 
   //Read the data
-  d3.csv("https://raw.githubusercontent.com/holtzy/data_to_viz/master/Example_dataset/5_OneCatSevNumOrdered.csv", function (data) {
+  d3.csv("https://raw.githubusercontent.com/holtzy/data_to_viz/master/Example_dataset/5_OneCatSevNumOrdered.csv").then(function (data) {
 
     // group the data: I want to draw one line per group
-    var sumstat = d3.nest() // nest function allows to group the calculation per level of a factor
+    // nest function allows to group the calculation per level of a factor
+    var sumstat = d3.nest() 
       .key(function (d) { return d.name; })
       .entries(data);
 
@@ -59,10 +60,10 @@ function drawChart(svgRef: React.RefObject<SVGSVGElement>) {
           .y(function (d) { return y(+d.n); })
           (d.values)
       })
-  }
+  })
 }
 
-const Chart: React.FunctionComponent = () => {
+const Chart = () => {
     const svg = React.useRef<SVGSVGElement>(null);
     React.useEffect(() => {
       drawChart(svg);

@@ -13,14 +13,14 @@ const pages = ["Dublin", "New Delhi", "Redmond", "San Francisco"];
 export default function ButtonAppBar() {
   return (
     <Box sx={{ flexGrow: 1 }}>
-      <AppBar position="static">
+      <AppBar position="static" style={{ background: '#f06292' }}>
         <Toolbar>
-          <Box sx={{ flexGrow: 1, display: { xs: "none", md: "flex" } }}>
+          <Box sx={{ flexGrow: 1, display: { xs: "none", md: "flex" }}}>
             {pages.map((page) => (
               <Link key={page} href={page.replace(" ", "")} passHref>
                 <Button
                   key={page}
-                  sx={{ my: 2, color: "white", display: "block" }}
+                  sx={{ my: 1, color: "white", display: "block" }}
                 >
                   {page}
                 </Button>

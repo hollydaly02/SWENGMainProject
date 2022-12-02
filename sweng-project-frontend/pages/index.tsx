@@ -11,7 +11,7 @@ export default function Home() {
       <h1 className={styles.title}>
         Welcome to SWENG Group 15 Dashboard
       </h1>
-      <h2>Select a city to view the dashboard</h2>
+      <h2>(Select a city to view the dashboard)</h2>
       <div className={styles.container}>
         <Head>
           <title>SWENG 15 Dasboard</title>

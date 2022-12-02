@@ -10,7 +10,7 @@ function drawChart(svgRef: React.RefObject<SVGSVGElement>) {
   svg
     .attr("width", w)
     .attr("height", h)
-    .style("background", "#d3d3d3")
+    .style("background", "#fce4ec")
     .style("overflow", "visible")
     .style("margin-top", "40px")
     .style("margin-bottom", "40px");

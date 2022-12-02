@@ -18,10 +18,11 @@ import BarChart from "../components/BarChart";
 
 export default function LocationView({ location }: { location: string }) {
   return (
-    <main className={styles.main}>
-      <div className={styles.container}>
-        <div className={styles.overimg1}>
-          <form action="/action_page.php" className={styles.form}>
+    <div>
+    <Box sx={{ width: '100%' }}>
+      <Grid item xs={10}>
+        <Item sx={{ borderRadius: 0 }}>
+          <form action="/action_page.php">
             <div className={styles.inputcontainer}>
               <i className="fa fa-calendar icon"></i>
               <input
@@ -30,9 +31,7 @@ export default function LocationView({ location }: { location: string }) {
                 placeholder="Password"
                 name="pswrd"
               />
-            </div>
-
-            <button
+              <button
               type="submit"
               className={styles.btn}
               //onClick="check(this.form)"
@@ -40,9 +39,14 @@ export default function LocationView({ location }: { location: string }) {
             >
               Input
             </button>
+            </div>
+
           </form>
-        </div>
-      </div>
+        </Item>
+      </Grid>
+    </Box>
+    <main className={styles.main}>
+      
       <Box sx={{ width: '100%' }}>
       <Grid container rowSpacing={1} columnSpacing={{ xs: 1, sm: 2, md: 3 }}>
         <Grid item xs={6}>
@@ -64,6 +68,7 @@ export default function LocationView({ location }: { location: string }) {
       </Grid>
     </Box>
     </main>
+    </div>
   );
 }
 

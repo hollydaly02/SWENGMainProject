@@ -2,20 +2,8 @@
 
 /* Add a gray background color with some padding */
 .main {
-  min-height: 100vh;
   padding: 25px;
-  flex: 1;
-  display: flex;
-  flex-direction: column;
-  background-image: url("background.jpg");
   background-size: fill;
-}
-
-.container1 {
-  padding: 0 2rem;
-  position: fixed;
-  top: 0;
-  left: 0;
 }
 
 .h1 {
@@ -25,11 +13,11 @@
 }
 
 .inputcontainer {
-  display: -ms-flexbox;
-  /* IE10 */
+  width: 50%;
+  margin: 0px;
+  margin: 10px;
   display: flex;
-  width: 350px;
-  margin-bottom: 15px;
+
 }
 
 .icon {
@@ -43,7 +31,7 @@
 .inputfield {
   width: 100%;
   padding: 10px;
-  outline: none;
+  outline: 2px;
 }
 
 .inputfield:focus {
@@ -52,35 +40,17 @@
 
 /* Set a style for the submit button */
 .btn {
-  background-color: pink;
+  background-color: #f48fb1;
   color: black;
   padding: 15px 20px;
   border: none;
   cursor: pointer;
-  width: 350px;
+  width: 200px;
   opacity: 0.9;
+  margin-left: 10px;
+  vertical-align:middle;
 }
 
 .btn:hover {
   opacity: 1;
-}
-
-
-.footer1 {
-  padding: 5px;
-  text-align: center;
-  background: #494848;
-  ;
-}
-
-
-.overimg1 {
-  position: absolute;
-  top: 50%;
-  left: 38%;
-}
-
-.form {
-  max-width: 500;
-  margin: auto;
 }

@@ -7,7 +7,7 @@ const Chart = () => {
     drawChart(svg);
   }, [svg]);
 
-  const outerRadius = 200;
+  const outerRadius = 150;
   const innerRadius = 0;
   const margin = {
     top: 50,
@@ -76,7 +76,11 @@ const Chart = () => {
       .attr("transform", (d) => {
         const [x, y] = arcGenerator.centroid(d);
         return `translate(${x}, ${y})`;
-      });
+      })
+      .attr("text-anchor", "middle")
+      .text( function(d, i) {
+        return data[i].label;}
+      );
   }
 
   return (

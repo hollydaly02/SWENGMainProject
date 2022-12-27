@@ -15,6 +15,7 @@ const Item = styled(Paper)(({ theme }) => ({
 }));
 
 import BarChart from "../components/BarChart";
+import BarChart2 from "../components/BarChart2";
 import LineChart from "../components/LineChart";
 import PieChart from "../components/PieChart";
 import Typography from "@mui/material/Typography";
@@ -51,7 +52,7 @@ export default function LocationView({ location }: { location: string }) {
     <main className={styles.main}>
       
       <Box sx={{ width: '100%' }}>
-      <Grid container rowSpacing={1} columnSpacing={{ xs: 1, sm: 2, md: 3 }}>
+      <Grid container rowSpacing={2} columnSpacing={{ xs: 1, sm: 2, md: 3 }}>
         <Grid item xs={6}>
           <Item>
             <Typography variant="h5" fontWeight={500} paddingTop={2} gutterBottom>
@@ -65,7 +66,7 @@ export default function LocationView({ location }: { location: string }) {
             <Typography variant="h5" fontWeight={500} paddingTop={2} gutterBottom>
               Temperature
             </Typography>
-            <BarChart />
+            <BarChart2 />
           </Item>
         </Grid>
         <Grid item xs={6}>

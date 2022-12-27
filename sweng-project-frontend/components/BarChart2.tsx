@@ -2,7 +2,7 @@ import * as React from "react";
 import * as d3 from "d3";
 
 function drawChart(svgRef: React.RefObject<SVGSVGElement>) {
-  const data = [100, 50, 70, 60, 80, 150];
+  const data = [13, 18, 22, 25, 20, 15];
   const w = 600;
   const h = 300;
   const svg = d3.select(svgRef.current);
@@ -22,12 +22,13 @@ function drawChart(svgRef: React.RefObject<SVGSVGElement>) {
     .range([0, w])
     .padding(0.5); // between bars
 
-  const yScale = d3.scaleLinear().domain([0, h]).range([h, 0]);
+  const yScale = d3.scaleLinear().domain([0, 50]).range([h, 0]);
 
   // setting the axes
   const xAxis = d3
     .axisBottom(xScale)
     .ticks(data.length) // number of labels on bottom
+    .tickFormat((i) => i);
   const yAxis = d3.axisLeft(yScale).ticks(5);
 
   svg
